@@ -1,0 +1,241 @@
+$primaryFont: "Roboto", sans-serif;
+$bgColorPurple: #573551;
+$colorText: #fff;
+
+
+// MIXINS
+
+@mixin flex-box ($justify:center, $aling:center){
+    display: flex;
+    justify-content: $justify;
+    align-items:$aling;
+}
+@mixin responsive-img($width:100%){
+    width: $width;
+    max-width: 100%;
+}
+@mixin titles-text ($size:30px, $weight:500, $margin-btn:30px, $opacity:1){
+    font-size: $size;
+    font-weight:$weight;
+    margin-bottom:$margin-btn;
+    opacity: $opacity;
+}
+
+// EXTEND
+
+%Cursor{
+    cursor: pointer;
+}
+
+// BODY
+
+body{
+    width: 100%;
+    font-family : "Roboto", sans-serif;
+    font-size: 15px;
+    margin: 0 auto;
+}
+
+*{
+    box-sizing: border-box
+}
+
+// HEADER
+
+.header{
+    @include flex-box(space-between);
+    width: 100%;
+    background-color: $bgColorPurple;
+    padding: 20px 50px;
+
+    &__logo{
+        width: 100px;
+    }
+
+    &__icons{
+        width: 40px;
+        @extend %Cursor;
+        display: inline-block;
+    }
+
+    &__icons--img{
+        @include responsive-img(100%)
+    }
+}
+
+// BANNER
+
+.banner{
+    background-image: url(../img/descartable.png);
+    padding: 40px 0;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+    color: $colorText;
+
+    &__title{
+        @include titles-text(30px, 500, 30px)
+    }
+
+    &__text{
+        @include titles-text(20px, 300,0 ,0.7)
+    }
+}
+
+// PRODUCTS
+
+.products{
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+
+    &__item{
+        @extend %Cursor;
+        text-align: center;
+    }
+
+    &__img{
+        @include responsive-img(250px);
+        margin-bottom: 15px;
+    }
+
+    &__title{
+        @include titles-text(17px, 500 , 5px,)
+    }
+
+    &__text{
+        @include titles-text(15px,300,)
+    }
+}
+
+// CART
+
+.cart{
+    width: 500px;
+    background-color: #fff;
+    padding: 25px;
+    height: 100%;
+    position: fixed;
+    right: -50%;
+    top: 100px;
+    box-shadow: -19px -1px 22px -15px rgba(0,0,0, 0.30);
+
+    &__title{
+        @include titles-text(25px, 600, 0,);
+        text-align: center;
+        padding: 25px 0;
+    }
+
+    &__products{
+        @include flex-box(space-between);
+        border-bottom: 1px solid #333;
+        padding: 15px;
+    }
+
+    &__img{
+        @include responsive-img(60px);
+    }
+
+    &__text:nth-child(3){
+        @include titles-text(500)
+    }
+
+    &__icon{
+        width: 25px;
+        margin-top: 10px;
+    }
+
+    &__icon--img{
+        @include responsive-img(100%);
+        @extend %Cursor;
+    }
+}
+
+// MQ
+
+/*MEDIA QUERIES*/
+@media (max-width: 51.25em) { /*768px*/
+    .header{
+    padding: 15px;
+
+    &__logo{
+        width: 60px; 
+}
+    
+    &__icons{
+        width: 30px; 
+}
+    
+}
+
+.products{
+        grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+
+        &__img{
+            @include responsive-img(150px);
+        }
+}
+
+.cart{
+    width:400px;
+    top: 80px;
+}
+}
+
+@media (max-width: 30em) { /*480px*/
+    .banner{
+    padding: 30px 0;
+
+    &__title{
+        font-size: 24px;
+    }
+    
+    &__text{
+        font-size: 16px;
+    }
+    
+}
+
+
+.products{
+    grid-template-columns: 1fr;
+    padding: 10px;
+
+    &__img{
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    &__title ,
+    &__text {
+        padding: 0 10px;
+    }
+    
+
+}
+
+
+.cart{
+    width: 100%; 
+    box-shadow: none; 
+
+    &__title{
+        padding: 15px 0;
+    }
+    
+    &__products{
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    &__img{
+        width: 100px; 
+    }
+    &__text{
+        margin: 0; 
+    }
+}
+}
