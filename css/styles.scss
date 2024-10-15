@@ -95,16 +95,19 @@ body{
     gap: 10px;
     padding: 20px;
     margin: 0 auto;
+    margin-top: 20px;
     grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
 
     &__item{
         @extend %Cursor;
         text-align: center;
+        background-color: grey;
     }
 
     &__img{
         @include responsive-img(250px);
         margin-bottom: 15px;
+        padding: 10px;
     }
 
     &__title{

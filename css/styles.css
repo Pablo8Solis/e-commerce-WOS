@@ -67,15 +67,18 @@ body {
   gap: 10px;
   padding: 20px;
   margin: 0 auto;
+  margin-top: 20px;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 .products__item {
   text-align: center;
+  background-color: grey;
 }
 .products__img {
   width: 250px;
   max-width: 100%;
   margin-bottom: 15px;
+  padding: 10px;
 }
 .products__title {
   font-size: 17px;
