@@ -45,15 +45,15 @@ body{
 .header{
     @include flex-box(space-between);
     width: 100%;
-    background-color: $bgColorPurple;
-    padding: 20px 50px;
+    background-color:grey;
+    padding: 10px 20px;
 
     &__logo{
-        width: 100px;
+        width: 90px;
     }
 
     &__icons{
-        width: 40px;
+        width: 26px;
         @extend %Cursor;
         display: inline-block;
     }
