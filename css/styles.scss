@@ -68,17 +68,23 @@ body{
 .banner{
     background-image: url(../img/descartable.png);
     padding: 40px 0;
+    height: 70vh;
     background-repeat: no-repeat;
     text-align: center;
+    @include flex-box(center,center);
+    flex-direction: column;
     background-size: cover;
     color: $colorText;
 
     &__title{
-        @include titles-text(30px, 500, 30px)
+        @include titles-text(30px, 500, 30px);
+        font-size: 40px;
+        text-transform: uppercase;
     }
 
     &__text{
-        @include titles-text(20px, 300,0 ,0.7)
+        @include titles-text(20px, 300,0 ,0.7);
+        margin: 0px;
     }
 }
 

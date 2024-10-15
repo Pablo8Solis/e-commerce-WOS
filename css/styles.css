@@ -36,8 +36,13 @@ body {
 .banner {
   background-image: url(../img/descartable.png);
   padding: 40px 0;
+  height: 70vh;
   background-repeat: no-repeat;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-size: cover;
   color: #fff;
 }
@@ -46,12 +51,15 @@ body {
   font-weight: 500;
   margin-bottom: 30px;
   opacity: 1;
+  font-size: 40px;
+  text-transform: uppercase;
 }
 .banner__text {
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 0;
   opacity: 0.7;
+  margin: 0px;
 }
 
 .products {
