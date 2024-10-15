@@ -45,15 +45,15 @@ body{
 .header{
     @include flex-box(space-between);
     width: 100%;
-    background-color: $bgColorPurple;
-    padding: 20px 50px;
+    background-color:grey;
+    padding: 10px 20px;
 
     &__logo{
-        width: 100px;
+        width: 90px;
     }
 
     &__icons{
-        width: 40px;
+        width: 26px;
         @extend %Cursor;
         display: inline-block;
     }
@@ -68,17 +68,23 @@ body{
 .banner{
     background-image: url(../img/descartable.png);
     padding: 40px 0;
+    height: 70vh;
     background-repeat: no-repeat;
     text-align: center;
+    @include flex-box(center,center);
+    flex-direction: column;
     background-size: cover;
     color: $colorText;
 
     &__title{
-        @include titles-text(30px, 500, 30px)
+        @include titles-text(30px, 500, 30px);
+        font-size: 40px;
+        text-transform: uppercase;
     }
 
     &__text{
-        @include titles-text(20px, 300,0 ,0.7)
+        @include titles-text(20px, 300,0 ,0.7);
+        margin: 0px;
     }
 }
 
@@ -89,16 +95,19 @@ body{
     gap: 10px;
     padding: 20px;
     margin: 0 auto;
+    margin-top: 20px;
     grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
 
     &__item{
         @extend %Cursor;
         text-align: center;
+        background-color: grey;
     }
 
     &__img{
         @include responsive-img(250px);
         margin-bottom: 15px;
+        padding: 10px;
     }
 
     &__title{
@@ -114,9 +123,10 @@ body{
 
 .cart{
     width: 500px;
-    background-color: #fff;
+    background-color: rgb(219, 213, 213);
     padding: 25px;
     height: 100%;
+    border-radius: 10px;
     position: fixed;
     right: -50%;
     top: 100px;

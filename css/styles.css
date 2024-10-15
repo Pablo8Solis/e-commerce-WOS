@@ -18,14 +18,14 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #573551;
-  padding: 20px 50px;
+  background-color: grey;
+  padding: 10px 20px;
 }
 .header__logo {
-  width: 100px;
+  width: 90px;
 }
 .header__icons {
-  width: 40px;
+  width: 26px;
   display: inline-block;
 }
 .header__icons--img {
@@ -36,8 +36,13 @@ body {
 .banner {
   background-image: url(../img/descartable.png);
   padding: 40px 0;
+  height: 70vh;
   background-repeat: no-repeat;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-size: cover;
   color: #fff;
 }
@@ -46,12 +51,15 @@ body {
   font-weight: 500;
   margin-bottom: 30px;
   opacity: 1;
+  font-size: 40px;
+  text-transform: uppercase;
 }
 .banner__text {
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 0;
   opacity: 0.7;
+  margin: 0px;
 }
 
 .products {
@@ -59,15 +67,18 @@ body {
   gap: 10px;
   padding: 20px;
   margin: 0 auto;
+  margin-top: 20px;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 .products__item {
   text-align: center;
+  background-color: grey;
 }
 .products__img {
   width: 250px;
   max-width: 100%;
   margin-bottom: 15px;
+  padding: 10px;
 }
 .products__title {
   font-size: 17px;
@@ -84,9 +95,10 @@ body {
 
 .cart {
   width: 500px;
-  background-color: #fff;
+  background-color: rgb(219, 213, 213);
   padding: 25px;
   height: 100%;
+  border-radius: 10px;
   position: fixed;
   right: -50%;
   top: 100px;
